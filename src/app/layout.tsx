@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/NewsLetter";
+import SmoothScroll from "@/components/SmoothScroll"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <SmoothScroll>
         <div className="min-h-screen flex flex-col">
         <Header/>
         <main className="flex-1">
@@ -39,6 +41,7 @@ export default function RootLayout({
         <Newsletter/>
         <Footer/>
         </div>
+        </SmoothScroll>
       </body>
     </html>
   );
