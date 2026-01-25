@@ -24,9 +24,9 @@ const Header = () => {
         {/* Mobile Menu Icon */}
         <div className="flex items-center lg:hidden">
           <button className="flex flex-col gap-1.5">
-            <span className="h-[2px] w-6 bg-white"></span>
-            <span className="h-[2px] w-6 bg-white"></span>
-            <span className="h-[2px] w-6 bg-white"></span>
+            <span className="h-0.5 w-6 bg-white"></span>
+            <span className="h-0.5 w-6 bg-white"></span>
+            <span className="h-0.5 w-6 bg-white"></span>
           </button>
         </div>
       </div>
