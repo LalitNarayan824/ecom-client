@@ -1,10 +1,10 @@
 const Header = () => {
   return (
-    <nav className="sticky top-0 z-50 w-full backdrop-blur-md bg-green-950/80 lg:bg-transparent">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    <nav className="fixed top-0 z-50 w-full backdrop-blur bg-transparent">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
         {/* Logo */}
         <div className="flex items-center hover:cursor-pointer">
-          <span className="text-xl font-semibold tracking-wide text-white">
+          <span className="text-4xl font-semibold tracking-wide text-white font-serif">
             Flora
           </span>
         </div>
