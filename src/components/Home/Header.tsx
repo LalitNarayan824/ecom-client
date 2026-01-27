@@ -2,8 +2,16 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 
-const menuItems = ["Home", "Shop", "Cart", "About Us", "Contact"]
+const menuItems: { name: string; src: string }[] = [
+  { name: "Home", src: "/" },
+  { name: "Shop", src: "/shop" },
+  { name: "Cart", src: "/cart" },
+  { name: "About Us", src: "/about" },
+  { name: "Contact", src: "/contact" },
+];
+
 
 const Header = () => {
   const [open, setOpen] = useState(false)
@@ -11,7 +19,7 @@ const Header = () => {
   return (
     <>
       <nav className="fixed top-0 z-50 w-full border-b border-white/5 bg-[#080808]/30 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
           {/* Logo */}
           <div className="flex items-center cursor-pointer">
             <span className="text-2xl font-medium tracking-tighter text-white">
@@ -22,13 +30,15 @@ const Header = () => {
           {/* Desktop Links */}
           <div className="hidden lg:flex items-center gap-10">
             {menuItems.map((item) => (
+              <Link key={item.name} href={item.src}>
               <span
-                key={item}
-                className="relative text-sm tracking-[0.15em] text-white cursor-pointer transition-colors hover:text-white group"
-              >
-                {item}
+                
+                className="relative text-sm  text-white cursor-pointer transition-colors hover:text-white group"
+                >
+                {item.name}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-white transition-all duration-300 group-hover:w-full" />
               </span>
+                </Link>
             ))}
           </div>
 
@@ -66,16 +76,18 @@ const Header = () => {
           >
             <div className="flex h-full flex-col items-center justify-center gap-8 px-6">
               {menuItems.map((item, i) => (
+                <Link href={item.src} key={item.name}>
                 <motion.button
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  key={item}
+                  
                   onClick={() => setOpen(false)}
                   className="text-3xl font-light tracking-widest text-zinc-200 hover:text-white transition"
-                >
-                  {item}
+                  >
+                  {item.name}
                 </motion.button>
+                </Link>
               ))}
             </div>
           </motion.div>

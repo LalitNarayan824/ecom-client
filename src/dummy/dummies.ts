@@ -11,27 +11,27 @@ export const categoriesName = [
 export const categories = [
   {
     name: "Flowers",
-    image: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7",
+    image: "/red-flowers2.jpg",
   },
   {
     name: "Vases",
-    image: "https://images.unsplash.com/photo-1605979399824-6da8d80f0d6d",
+    image: "/red-flowers2.jpg",
   },
   {
     name: "Plants",
-    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6",
+    image: "/red-flowers2.jpg",
   },
   {
     name: "Pottery",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    image: "/red-flowers2.jpg",
   },
   {
     name: "Candles",
-    image: "https://images.unsplash.com/photo-1603006905003-be475563bc59",
+    image: "/red-flowers2.jpg",
   },
   {
     name: "Seeds",
-    image: "https://images.unsplash.com/photo-1615485737651-580c9159c89b",
+    image: "/red-flowers2.jpg",
   },
 ]
 
@@ -550,7 +550,7 @@ export const flowers:Product[] = [
     name: "Rose Bouquet",
     description: "Classic red roses for every occasion.",
     price: 599,
-    image: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7",
+    image: "/red-flowers2.jpg",
     category: "flowers",
   },
   {
@@ -558,7 +558,7 @@ export const flowers:Product[] = [
     name: "Tulip Bunch",
     description: "Fresh tulips in vibrant colors.",
     price: 499,
-    image: "https://images.unsplash.com/photo-1526045612212-70caf35c14df",
+    image: "/red-flowers2.jpg",
     category: "flowers",
   },
   {
@@ -566,7 +566,7 @@ export const flowers:Product[] = [
     name: "Sunflower Set",
     description: "Bright sunflowers to lift your mood.",
     price: 399,
-    image: "https://images.unsplash.com/photo-1508747703725-719777637510",
+    image: "/red-flowers2.jpg",
     category: "flowers",
   },
   {
@@ -574,7 +574,7 @@ export const flowers:Product[] = [
     name: "Orchid Pot",
     description: "Elegant orchids with long-lasting blooms.",
     price: 899,
-    image: "https://images.unsplash.com/photo-1524594154908-eddc53b13e8a",
+    image: "/red-flowers2.jpg",
     category: "flowers",
   },
   {
