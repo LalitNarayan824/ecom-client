@@ -54,7 +54,7 @@ const ShopByCategory = () => {
           </ul>
 
           {/* Fixed Preview - Less "flashy" transition */}
-          <div className="relative h-[550px] w-full overflow-hidden bg-zinc-900 rounded-sm">
+          <div className="relative h-137.5 w-full overflow-hidden bg-zinc-900 rounded-sm">
             <AnimatePresence mode="wait">
               {active !== null ? (
                 <motion.div
