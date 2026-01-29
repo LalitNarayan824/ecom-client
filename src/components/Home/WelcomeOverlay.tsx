@@ -22,14 +22,14 @@ const WelcomeOverlay = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.98 }}
           transition={{ duration: 1.2, ease: 'easeInOut' }}
-          className="fixed inset-0 z-999 flex items-center justify-center bg-green-950 overflow-hidden"
+          className="fixed inset-0 z-999 flex items-center justify-center bg-[#29003a] overflow-hidden"
         >
           {/* Animated Glow Blob */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.35 }}
             transition={{ duration: 1.2 }}
-            className="absolute h-96 w-96 rounded-full bg-emerald-500 blur-[120px]"
+            className="absolute h-96 w-96 rounded-full bg-purple-400 blur-[120px]"
           />
 
           {/* Text */}

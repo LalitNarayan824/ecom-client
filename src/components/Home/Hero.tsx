@@ -35,7 +35,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Subtle Vignette Overlay */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/20 via-transparent to-[#1b2b22]/80" />
+      {/* <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/20 via-transparent to-[#231b2b]/80" /> */}
 
       {/* Main Content */}
       <div className="relative z-20 flex h-full flex-col items-center justify-center px-6 text-center">
@@ -61,7 +61,7 @@ export default function Hero() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </button>
             
-            <p className="max-w-[240px] text-left text-[11px] leading-relaxed text-white/50 uppercase tracking-widest">
+            <p className="max-w-60 text-left text-[11px] leading-relaxed text-white/50 uppercase tracking-widest">
               Hand-picked flora for the <br /> modern sanctuary.
             </p>
           </div>
@@ -76,7 +76,7 @@ export default function Hero() {
         className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20"
       >
         <div className="flex flex-col items-center gap-4">
-          <div className="h-[60px] w-[1px] bg-gradient-to-b from-[#e9c46a] to-transparent" />
+          <div className="h-15 w-px bg-linear-to-b from-[#e9c46a] to-transparent" />
           <span className="text-[9px] uppercase tracking-[0.4em] text-[#e9c46a]/60">Scroll</span>
         </div>
       </motion.div>

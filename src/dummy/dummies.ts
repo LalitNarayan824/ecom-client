@@ -11,27 +11,27 @@ export const categoriesName = [
 export const categories = [
   {
     name: "Flowers",
-    image: "/red-flowers2.jpg",
+    image: "/bouqet.jpg",
   },
   {
     name: "Vases",
-    image: "/red-flowers2.jpg",
+    image: "/vase.jpg",
   },
   {
     name: "Plants",
-    image: "/red-flowers2.jpg",
+    image: "/flowers.jpg",
   },
   {
     name: "Pottery",
-    image: "/red-flowers2.jpg",
+    image: "/pottery.jpg",
   },
   {
     name: "Candles",
-    image: "/red-flowers2.jpg",
+    image: "/candles.jpg",
   },
   {
     name: "Seeds",
-    image: "/red-flowers2.jpg",
+    image: "/seeds1.webp",
   },
 ]
 
@@ -56,7 +56,7 @@ export const products: Product[] = [
     name: "Monstera Deliciosa",
     description: "A lush indoor plant with large, split leaves.",
     price: 1299,
-    image: "/images/plants/monstera.jpg",
+    image: "/skeleton.webp",
     category: "plants",
   },
   {
@@ -64,7 +64,7 @@ export const products: Product[] = [
     name: "Snake Plant",
     description: "Low-maintenance plant perfect for modern interiors.",
     price: 799,
-    image: "/images/plants/snake.jpg",
+    image: "/skeleton.webp",
     category: "plants",
   },
   {
@@ -72,7 +72,7 @@ export const products: Product[] = [
     name: "Fiddle Leaf Fig",
     description: "Elegant plant with bold, glossy leaves.",
     price: 1899,
-    image: "/images/plants/fiddle.jpg",
+    image: "/skeleton.webp",
     category: "plants",
   },
   {
@@ -80,7 +80,7 @@ export const products: Product[] = [
     name: "Peace Lily",
     description: "Air-purifying plant with soft white blooms.",
     price: 899,
-    image: "/images/plants/peace-lily.jpg",
+    image: "/skeleton.webp",
     category: "plants",
   },
   {
@@ -88,7 +88,7 @@ export const products: Product[] = [
     name: "ZZ Plant",
     description: "Hardy plant with waxy green leaves.",
     price: 999,
-    image: "/images/plants/zz.jpg",
+    image: "/skeleton.webp",
     category: "plants",
   },
   {
@@ -96,7 +96,7 @@ export const products: Product[] = [
     name: "Areca Palm",
     description: "Brightens rooms with tropical vibes.",
     price: 1599,
-    image: "/images/plants/areca.jpg",
+    image: "/skeleton.webp",
     category: "plants",
   },
   {
@@ -104,7 +104,7 @@ export const products: Product[] = [
     name: "Rubber Plant",
     description: "Bold statement plant with deep green leaves.",
     price: 1199,
-    image: "/images/plants/rubber.jpg",
+    image: "/skeleton.webp",
     category: "plants",
   },
   {
@@ -112,7 +112,7 @@ export const products: Product[] = [
     name: "Aloe Vera",
     description: "Medicinal plant with minimal care needs.",
     price: 499,
-    image: "/images/plants/aloe.jpg",
+    image: "/skeleton.webp",
     category: "plants",
   },
   {
@@ -120,7 +120,7 @@ export const products: Product[] = [
     name: "Boston Fern",
     description: "Soft foliage ideal for hanging baskets.",
     price: 699,
-    image: "/images/plants/fern.jpg",
+    image: "/skeleton.webp",
     category: "plants",
   },
   {
@@ -128,7 +128,7 @@ export const products: Product[] = [
     name: "Calathea Orbifolia",
     description: "Decorative plant with striped leaves.",
     price: 1499,
-    image: "/images/plants/calathea.jpg",
+    image: "/skeleton.webp",
     category: "plants",
   },
 
@@ -138,7 +138,7 @@ export const products: Product[] = [
     name: "Rose Bouquet",
     description: "Classic red roses wrapped elegantly.",
     price: 999,
-    image: "/images/flowers/roses.jpg",
+    image: "/skeleton.webp",
     category: "flowers",
   },
   {
@@ -146,7 +146,7 @@ export const products: Product[] = [
     name: "Tulip Mix",
     description: "Bright tulips perfect for any occasion.",
     price: 1099,
-    image: "/images/flowers/tulips.jpg",
+    image: "/skeleton.webp",
     category: "flowers",
   },
   {
@@ -154,7 +154,7 @@ export const products: Product[] = [
     name: "Sunflower Bunch",
     description: "Cheerful sunflowers full of warmth.",
     price: 899,
-    image: "/images/flowers/sunflower.jpg",
+    image: "/skeleton.webp",
     category: "flowers",
   },
   {
@@ -162,7 +162,7 @@ export const products: Product[] = [
     name: "Orchid Stem",
     description: "Elegant orchid with long-lasting blooms.",
     price: 1299,
-    image: "/images/flowers/orchid.jpg",
+    image: "/skeleton.webp",
     category: "flowers",
   },
   {
@@ -170,7 +170,7 @@ export const products: Product[] = [
     name: "Lily Arrangement",
     description: "Fragrant lilies arranged with care.",
     price: 1199,
-    image: "/images/flowers/lily.jpg",
+    image: "/skeleton.webp",
     category: "flowers",
   },
   {
@@ -178,7 +178,7 @@ export const products: Product[] = [
     name: "Peony Bunch",
     description: "Soft, romantic peonies.",
     price: 1499,
-    image: "/images/flowers/peony.jpg",
+    image: "/skeleton.webp",
     category: "flowers",
   },
   {
@@ -186,7 +186,7 @@ export const products: Product[] = [
     name: "Daisy Basket",
     description: "Fresh daisies in a rustic basket.",
     price: 799,
-    image: "/images/flowers/daisy.jpg",
+    image: "/skeleton.webp",
     category: "flowers",
   },
   {
@@ -194,7 +194,7 @@ export const products: Product[] = [
     name: "Carnation Mix",
     description: "Colorful carnations for daily décor.",
     price: 699,
-    image: "/images/flowers/carnation.jpg",
+    image: "/skeleton.webp",
     category: "flowers",
   },
   {
@@ -202,7 +202,7 @@ export const products: Product[] = [
     name: "Lavender Bunch",
     description: "Calming lavender with natural aroma.",
     price: 899,
-    image: "/images/flowers/lavender.jpg",
+    image: "/skeleton.webp",
     category: "flowers",
   },
   {
@@ -210,7 +210,7 @@ export const products: Product[] = [
     name: "Wildflower Wrap",
     description: "Seasonal wildflowers hand-tied.",
     price: 999,
-    image: "/images/flowers/wildflower.jpg",
+    image: "/skeleton.webp",
     category: "flowers",
   },
 
@@ -220,7 +220,7 @@ export const products: Product[] = [
     name: "Ceramic White Vase",
     description: "Minimal ceramic vase for modern homes.",
     price: 699,
-    image: "/images/vases/ceramic-white.jpg",
+    image: "/skeleton.webp",
     category: "vases",
   },
   {
@@ -228,7 +228,7 @@ export const products: Product[] = [
     name: "Glass Cylinder Vase",
     description: "Clear glass vase for tall stems.",
     price: 599,
-    image: "/images/vases/glass.jpg",
+    image: "/skeleton.webp",
     category: "vases",
   },
   {
@@ -236,7 +236,7 @@ export const products: Product[] = [
     name: "Stoneware Vase",
     description: "Handcrafted stoneware finish.",
     price: 899,
-    image: "/images/vases/stoneware.jpg",
+    image: "/skeleton.webp",
     category: "vases",
   },
   {
@@ -244,7 +244,7 @@ export const products: Product[] = [
     name: "Matte Black Vase",
     description: "Bold statement vase with matte finish.",
     price: 999,
-    image: "/images/vases/black.jpg",
+    image: "/skeleton.webp",
     category: "vases",
   },
   {
@@ -252,7 +252,7 @@ export const products: Product[] = [
     name: "Terracotta Vase",
     description: "Earthy tones with rustic charm.",
     price: 649,
-    image: "/images/vases/terracotta.jpg",
+    image: "/skeleton.webp",
     category: "vases",
   },
   {
@@ -260,7 +260,7 @@ export const products: Product[] = [
     name: "Ribbed Glass Vase",
     description: "Textured glass with soft reflections.",
     price: 799,
-    image: "/images/vases/ribbed.jpg",
+    image: "/skeleton.webp",
     category: "vases",
   },
   {
@@ -268,7 +268,7 @@ export const products: Product[] = [
     name: "Tall Minimal Vase",
     description: "Slim vase for modern arrangements.",
     price: 1099,
-    image: "/images/vases/tall.jpg",
+    image: "/skeleton.webp",
     category: "vases",
   },
   {
@@ -276,7 +276,7 @@ export const products: Product[] = [
     name: "Rounded Clay Vase",
     description: "Soft rounded shape, handcrafted.",
     price: 899,
-    image: "/images/vases/rounded.jpg",
+    image: "/skeleton.webp",
     category: "vases",
   },
   {
@@ -284,7 +284,7 @@ export const products: Product[] = [
     name: "Speckled Vase",
     description: "Natural speckled ceramic finish.",
     price: 749,
-    image: "/images/vases/speckled.jpg",
+    image: "/skeleton.webp",
     category: "vases",
   },
   {
@@ -292,7 +292,7 @@ export const products: Product[] = [
     name: "Minimal Beige Vase",
     description: "Neutral tones for any space.",
     price: 699,
-    image: "/images/vases/beige.jpg",
+    image: "/skeleton.webp",
     category: "vases",
   },
 
@@ -302,7 +302,7 @@ export const products: Product[] = [
     name: "Lavender Soy Candle",
     description: "Relaxing lavender scent.",
     price: 399,
-    image: "/images/candles/lavender.jpg",
+    image: "/skeleton.webp",
     category: "candles",
   },
   {
@@ -310,7 +310,7 @@ export const products: Product[] = [
     name: "Vanilla Bean Candle",
     description: "Warm vanilla aroma.",
     price: 449,
-    image: "/images/candles/vanilla.jpg",
+    image: "/skeleton.webp",
     category: "candles",
   },
   {
@@ -318,7 +318,7 @@ export const products: Product[] = [
     name: "Eucalyptus Candle",
     description: "Fresh, clean eucalyptus notes.",
     price: 499,
-    image: "/images/candles/eucalyptus.jpg",
+    image: "/skeleton.webp",
     category: "candles",
   },
   {
@@ -326,7 +326,7 @@ export const products: Product[] = [
     name: "Amber Glow Candle",
     description: "Rich amber with woody tones.",
     price: 549,
-    image: "/images/candles/amber.jpg",
+    image: "/skeleton.webp",
     category: "candles",
   },
   {
@@ -334,7 +334,7 @@ export const products: Product[] = [
     name: "Rose Scented Candle",
     description: "Soft floral rose fragrance.",
     price: 449,
-    image: "/images/candles/rose.jpg",
+    image: "/skeleton.webp",
     category: "candles",
   },
   {
@@ -342,7 +342,7 @@ export const products: Product[] = [
     name: "Sandalwood Candle",
     description: "Earthy and calming scent.",
     price: 599,
-    image: "/images/candles/sandalwood.jpg",
+    image: "/skeleton.webp",
     category: "candles",
   },
   {
@@ -350,7 +350,7 @@ export const products: Product[] = [
     name: "Citrus Burst Candle",
     description: "Bright citrus energy.",
     price: 399,
-    image: "/images/candles/citrus.jpg",
+    image: "/skeleton.webp",
     category: "candles",
   },
   {
@@ -358,7 +358,7 @@ export const products: Product[] = [
     name: "Forest Pine Candle",
     description: "Fresh pine forest aroma.",
     price: 499,
-    image: "/images/candles/pine.jpg",
+    image: "/skeleton.webp",
     category: "candles",
   },
   {
@@ -366,7 +366,7 @@ export const products: Product[] = [
     name: "Minimal Wax Candle",
     description: "Unscented minimal candle.",
     price: 299,
-    image: "/images/candles/minimal.jpg",
+    image: "/skeleton.webp",
     category: "candles",
   },
   {
@@ -374,7 +374,7 @@ export const products: Product[] = [
     name: "Herbal Tea Candle",
     description: "Herbal blend for calm evenings.",
     price: 449,
-    image: "/images/candles/herbal.jpg",
+    image: "/skeleton.webp",
     category: "candles",
   },
 
@@ -384,7 +384,7 @@ export const products: Product[] = [
     name: "Basil Seeds",
     description: "Fresh basil for home gardens.",
     price: 149,
-    image: "/images/seeds/basil.jpg",
+    image: "/skeleton.webp",
     category: "seeds",
   },
   {
@@ -392,7 +392,7 @@ export const products: Product[] = [
     name: "Sunflower Seeds",
     description: "Grow tall, vibrant sunflowers.",
     price: 199,
-    image: "/images/seeds/sunflower.jpg",
+    image: "/skeleton.webp",
     category: "seeds",
   },
   {
@@ -400,7 +400,7 @@ export const products: Product[] = [
     name: "Lavender Seeds",
     description: "Grow fragrant lavender plants.",
     price: 249,
-    image: "/images/seeds/lavender.jpg",
+    image: "/skeleton.webp",
     category: "seeds",
   },
   {
@@ -408,7 +408,7 @@ export const products: Product[] = [
     name: "Mint Seeds",
     description: "Easy-to-grow mint leaves.",
     price: 149,
-    image: "/images/seeds/mint.jpg",
+    image: "/skeleton.webp",
     category: "seeds",
   },
   {
@@ -416,7 +416,7 @@ export const products: Product[] = [
     name: "Rose Seeds",
     description: "Classic roses for your garden.",
     price: 299,
-    image: "/images/seeds/rose.jpg",
+    image: "/skeleton.webp",
     category: "seeds",
   },
   {
@@ -424,7 +424,7 @@ export const products: Product[] = [
     name: "Chili Seeds",
     description: "Spicy chilies for home use.",
     price: 129,
-    image: "/images/seeds/chili.jpg",
+    image: "/skeleton.webp",
     category: "seeds",
   },
   {
@@ -432,7 +432,7 @@ export const products: Product[] = [
     name: "Tomato Seeds",
     description: "Juicy tomatoes at home.",
     price: 149,
-    image: "/images/seeds/tomato.jpg",
+    image: "/skeleton.webp",
     category: "seeds",
   },
   {
@@ -440,7 +440,7 @@ export const products: Product[] = [
     name: "Coriander Seeds",
     description: "Fresh coriander leaves.",
     price: 99,
-    image: "/images/seeds/coriander.jpg",
+    image: "/skeleton.webp",
     category: "seeds",
   },
   {
@@ -448,7 +448,7 @@ export const products: Product[] = [
     name: "Marigold Seeds",
     description: "Bright marigold flowers.",
     price: 179,
-    image: "/images/seeds/marigold.jpg",
+    image: "/skeleton.webp",
     category: "seeds",
   },
   {
@@ -456,7 +456,7 @@ export const products: Product[] = [
     name: "Spinach Seeds",
     description: "Nutritious leafy greens.",
     price: 129,
-    image: "/images/seeds/spinach.jpg",
+    image: "/skeleton.webp",
     category: "seeds",
   },
 ];

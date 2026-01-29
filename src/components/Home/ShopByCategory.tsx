@@ -69,13 +69,14 @@ const ShopByCategory = () => {
                     src={categories[active].image}
                     alt={categories[active].name}
                     fill
+                    priority={false}
                     className="object-cover grayscale-[0.3] contrast-[1.1]"
                   />
                   <div className="absolute inset-0 bg-black/20" />
                 </motion.div>
               ) : (
                 <div className="flex h-full items-center justify-center text-zinc-800 uppercase text-[10px] tracking-[0.3em]">
-                  Select Category
+                  <Image src="/bouqet3.jpg" alt="categories" className="object-cover " fill priority={false} />
                 </div>
               )}
             </AnimatePresence>
@@ -91,6 +92,7 @@ const ShopByCategory = () => {
                   src={cat.image}
                   alt={cat.name}
                   fill
+                  priority={false}
                   className="object-cover"
                 />
               </div>
