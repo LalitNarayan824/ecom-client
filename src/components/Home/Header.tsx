@@ -34,7 +34,7 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-10">
             {menuItems.map((item) => (
               <Link key={item.name} href={item.src}>
-                <span className="relative text-sm  text-white cursor-pointer transition-colors hover:text-[#b38b3f] group">
+                <span className="font-sans relative text-sm  text-white cursor-pointer transition-colors hover:text-[#b38b3f] group">
                   {item.name}
                   <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#b38b3f] transition-all duration-300 group-hover:w-full" />
                 </span>
@@ -142,7 +142,7 @@ const Header = () => {
                     onClick={() => setOpen(false)}
                     className="text-3xl font-light tracking-widest text-zinc-200 hover:text-white transition"
                   >
-                    cart
+                    Bag
                   </motion.button>
                 </Link>
                 <Link href={'/user'}>
