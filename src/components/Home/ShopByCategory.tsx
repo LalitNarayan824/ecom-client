@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { categories } from "@/dummy/dummies"
+import Link from "next/link"
 
 const ShopByCategory = () => {
   const [active, setActive] = useState<number | null>(null)
@@ -30,12 +31,13 @@ const ShopByCategory = () => {
           {/* List - No sliding text, just soft opacity */}
           <ul className="divide-y divide-zinc-900">
             {categories.map((cat, i) => (
+              <Link href={`/category/${cat.name.toLowerCase()}`}   key={cat.name}>
               <li
                 key={cat.name}
                 onMouseEnter={() => setActive(i)}
                 onMouseLeave={() => setActive(null)}
                 className="group relative cursor-pointer py-8 transition-opacity duration-300"
-              >
+                >
                 <div className="flex items-center justify-between">
                   <div className="flex items-baseline gap-6">
                     <span className="text-[10px] font-medium text-zinc-700 uppercase tracking-widest">
@@ -50,6 +52,7 @@ const ShopByCategory = () => {
                   <div className={`h-1 w-1 rounded-full bg-white transition-opacity duration-500 ${active === i ? 'opacity-100' : 'opacity-0'}`} />
                 </div>
               </li>
+                </Link>
             ))}
           </ul>
 

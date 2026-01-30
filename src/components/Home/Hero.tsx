@@ -3,83 +3,85 @@
 import Image from 'next/image'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import { ArrowRight } from 'lucide-react'
 
-export default function Hero() {
+export default function SurpriseHero() {
   const ref = useRef(null)
-
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
   })
 
-  // Smooth, subtle parallax
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '15%'])
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  // Smooth scaling for the container
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85])
+  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0])
+  
+  // Parallax for the internal image to give it depth
+  const imgY = useTransform(scrollYProgress, [0, 1], ['0%', '15%'])
 
   return (
-    <section ref={ref} className="relative h-screen w-full overflow-hidden bg-[#1b2b22]">
-      {/* Background Image Layer */}
-      <motion.div
-        style={{ y, scale }}
-        className="absolute inset-0 z-0"
+    <section ref={ref} className="relative h-[100vh] w-full bg-[#08100b] overflow-hidden flex items-center justify-center">
+      
+      {/* 1. THE FLOATING GALLERY FRAME */}
+      <motion.div 
+        style={{ scale, opacity }}
+        className="relative w-[92%] h-[65vh] md:w-[75%] md:h-[80vh] overflow-hidden rounded-[1px] z-0 shadow-[0_0_50px_rgba(0,0,0,0.5)]"
       >
-        <Image
-          src="/pexels1.jpg"
-          alt="Artisanal Floral Arrangement"
-          fill
-          priority
-          className="object-cover brightness-[0.5] contrast-[1.1]"
-        />
+        <motion.div style={{ y: imgY }} className="relative w-full h-[120%] -top-[10%]">
+          <Image
+            src="/pexels1.jpg" 
+            alt="Botanical Art"
+            fill
+            priority
+            className="object-cover contrast-[1.1] brightness-[0.7] md:brightness-[0.8]"
+          />
+        </motion.div>
+        
+        {/* Responsive Gradient: Stronger on mobile for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#08100b] via-[#08100b]/20 to-transparent md:bg-gradient-to-tr" />
       </motion.div>
 
-      {/* Subtle Vignette Overlay */}
-      {/* <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/20 via-transparent to-[#231b2b]/80" /> */}
-
-      {/* Main Content */}
-      <div className="relative z-20 flex h-full flex-col items-center justify-center px-6 text-center">
+      {/* 2. THE WHISPERED TEXT - Responsive Positioning */}
+      <div className="absolute inset-0 z-10 flex items-end justify-start p-6 pb-24 md:p-24 pointer-events-none">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          style={{ opacity }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full max-w-4xl"
         >
-          <span className="mb-6 block text-[10px] uppercase tracking-[0.6em] text-[#e9c46a] font-bold">
-            Established 2022
+          {/* Utility Label: Smaller on mobile */}
+          <span className="text-[7px] md:text-[9px] uppercase tracking-[0.6em] md:tracking-[0.8em] text-[#b38b3f] mb-4 md:mb-8 block font-mono">
+            REF: 00-143C // STUDIO ARCHIVE
           </span>
           
-          <h1 className="max-w-5xl font-serif text-6xl md:text-7xl leading-[0.85] text-white tracking-tighter">
-            Beautiful<span className="text-[#d9a5b3]">.</span><br />
-            Natural<span className="text-[#e9c46a]">.</span><br />
-            <span className="italic font-light opacity-90">Timeless.</span>
+          {/* Headline: Fluid scaling with clamp to prevent extreme sizes */}
+          <h1 className="font-sans text-[14vw] md:text-[8vw] leading-[0.85] text-[#f4f1ea] tracking-tighter">
+            Beautiful<span className="text-[#b38b3f] opacity-60">.</span> <br />
+            <motion.span 
+               initial={{ opacity: 0, x: 20 }}
+               animate={{ opacity: 1, x: 0 }}
+               transition={{ delay: 0.5, duration: 1.5 }}
+               className="italic font-light block ml-[10%] md:ml-24"
+            >
+              Timeless.
+            </motion.span>
           </h1>
-
-          <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-8">
-            <button className="group flex items-center gap-3 border border-white/20 bg-white/10 px-8 py-4 text-xs uppercase tracking-[0.2em] text-white backdrop-blur-md transition-all hover:bg-white hover:text-black">
-              Explore Collection
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
-            
-            <p className="max-w-60 text-left text-[11px] leading-relaxed text-white/50 uppercase tracking-widest">
-              Hand-picked flora for the <br /> modern sanctuary.
-            </p>
-          </div>
         </motion.div>
       </div>
 
-      {/* Bottom Decorative Element (Scroll Hint) */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20"
-      >
-        <div className="flex flex-col items-center gap-4">
-          <div className="h-15 w-px bg-linear-to-b from-[#e9c46a] to-transparent" />
-          <span className="text-[9px] uppercase tracking-[0.4em] text-[#e9c46a]/60">Scroll</span>
-        </div>
-      </motion.div>
+      {/* 3. VERTICAL PROGRESS - Hidden on very small screens for cleanliness */}
+      <div className="hidden xs:flex absolute right-6 md:right-16 h-24 md:h-32 w-px bg-white/5 items-start justify-center">
+        <motion.div 
+          style={{ height: '100%', scaleY: scrollYProgress, originY: 0 }}
+          className="w-px bg-[#b38b3f]"
+        />
+        <span className="absolute -bottom-12 text-[7px] md:text-[8px] uppercase tracking-widest text-zinc-500 -rotate-90 whitespace-nowrap">
+          Keep Scrolling
+        </span>
+      </div>
+
+      {/* Decorative Viewfinder (Digital Atelier DNA) */}
+      <div className="absolute top-8 left-8 w-4 h-4 border-t border-l border-[#b38b3f]/30 hidden md:block" />
+      <div className="absolute top-8 right-8 w-4 h-4 border-t border-r border-[#b38b3f]/30 hidden md:block" />
     </section>
   )
 }

@@ -7,6 +7,7 @@ import Newsletter from "@/components/Home/NewsLetter";
 import SmoothScroll from "@/components/SmoothScroll"
 import WelcomeOverlay from "@/components/Home/WelcomeOverlay";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -16,6 +17,8 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+
 
 export const metadata: Metadata = {
   title: {
