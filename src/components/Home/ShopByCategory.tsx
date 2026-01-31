@@ -10,17 +10,17 @@ const ShopByCategory = () => {
   const [active, setActive] = useState<number | null>(null)
 
   return (
-    <section className="bg-[#080808] py-24 text-zinc-100">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="bg-[#004b23] py-24 text-zinc-100">
+      <div className="mx-auto max-w-7xl px-6 bg-[#006400] p-3 rounded-2xl">
         
         {/* Simplified Header */}
-        <header className="mb-16 flex flex-col md:flex-row md:items-end justify-between border-b border-zinc-900 pb-12">
+        <header className="mb-16 flex flex-col md:flex-row md:items-end justify-between border-b border-[#ecf39e] pb-12">
           <div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight">
-              Shop by <span className="font-serif italic opacity-60">Category</span>
+            <h2 className="text-4xl md:text-5xl text-[#ecf39e] font-light tracking-tight">
+              Shop by <span className="font-serif italic ">Category</span>
             </h2>
           </div>
-          <p className="mt-4 max-w-75 text-[13px] leading-relaxed text-zinc-500 uppercase tracking-widest">
+          <p className="mt-4 max-w-75 text-[13px] text-[#ecf39e] leading-relaxed  uppercase tracking-widest">
             Artisanal flora curated for the <br /> modern living space.
           </p>
         </header>
@@ -36,14 +36,14 @@ const ShopByCategory = () => {
                 key={cat.name}
                 onMouseEnter={() => setActive(i)}
                 onMouseLeave={() => setActive(null)}
-                className="group relative cursor-pointer py-8 transition-opacity duration-300"
+                className={`group relative cursor-pointer px-2 py-8 transition-opacity rounded-2xl duration-300 ${active === i && 'bg-[#4f772d]'} `}
                 >
                 <div className="flex items-center justify-between">
                   <div className="flex items-baseline gap-6">
-                    <span className="text-[10px] font-medium text-zinc-700 uppercase tracking-widest">
+                    <span className="text-[10px] font-medium text-white uppercase tracking-widest">
                       ({i + 1})
                     </span>
-                    <h3 className={`text-3xl font-light transition-all duration-500 ${active === i ? 'text-white' : 'text-zinc-600'}`}>
+                    <h3 className={`text-3xl font-light transition-all duration-500 ${active === i ? 'text-white' : 'text-[#ecf39e]'}`}>
                       {cat.name}
                     </h3>
                   </div>
@@ -57,7 +57,7 @@ const ShopByCategory = () => {
           </ul>
 
           {/* Fixed Preview - Less "flashy" transition */}
-          <div className="relative h-137.5 w-full overflow-hidden bg-zinc-900 rounded-sm">
+          <div className="relative h-137.5 w-full overflow-hidden bg-[#006400] rounded-sm">
             <AnimatePresence mode="wait">
               {active !== null ? (
                 <motion.div

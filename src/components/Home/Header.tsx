@@ -3,7 +3,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { BarChartBig, CircleUserRound, ShoppingBag, User } from "lucide-react";
+import {
+  BarChartBig,
+  CircleUserRound,
+  House,
+  ShoppingBag,
+  Store,
+  User,
+} from "lucide-react";
+import Image from "next/image";
 
 const menuItems: { name: string; src: string }[] = [
   { name: "Home", src: "/" },
@@ -17,31 +25,67 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   // *todo
   // *real cart count from context manager
-  const [cartCount, setcartCount] = useState(4)
+  const [cartCount, setcartCount] = useState(4);
 
   return (
     <>
-      <nav className="fixed top-0 z-50 w-full border-b border-white/5 bg-[#080808]/30 backdrop-blur-md">
+      <nav className="fixed top-0 z-50 w-full backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
           {/* Logo */}
           <div className="flex items-center cursor-pointer">
-            <span className="text-2xl font-medium tracking-tighter text-white">
-              Flora<span className="text-zinc-500">.</span>
-            </span>
+            <Image
+                        src={"/logo-text2.png"}
+                        alt="logo-text"
+                        width={100}
+                        height={30}
+                        style={{ width: "clamp(45vw, 1000px)"}}
+                        className="z-11 pointer-events-auto block"
+                        priority
+                      />
           </div>
 
           {/* Desktop Links */}
           <div className="hidden lg:flex items-center gap-10">
-            {menuItems.map((item) => (
-              <Link key={item.name} href={item.src}>
-                <span className="font-sans relative text-sm  text-white cursor-pointer transition-colors hover:text-[#b38b3f] group">
-                  {item.name}
-                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#b38b3f] transition-all duration-300 group-hover:w-full" />
+            {/* users logo */}
+            <div className="flex items-center gap-6 md:gap-8 bg-black/20 px-3 rounded-2xl">
+              {/* HOME */}
+              <Link
+                href="/"
+                className="relative group p-2 transition-all duration-500"
+              >
+                {/* Soft Halo Background */}
+                <div className="absolute inset-0 rounded-full bg-white/0 scale-50 transition-all duration-700 group-hover:scale-100 group-hover:bg-white/5" />
+
+                {/* Icon */}
+                <House
+                  strokeWidth={1.2}
+                  className="relative z-10 h-5 w-5 md:h-6 md:w-6"
+                />
+
+                {/* Tooltip */}
+                <span className="pointer-events-none absolute left-1/2 top-full mt-3 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#000000] px-3 py-1.5 text-[9px] uppercase tracking-widest text-[#F6F7F4] opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:blur-0 group-hover:translate-y-0.5 hidden md:block">
+                  Home
                 </span>
               </Link>
-            ))}
-            {/* users logo */}
-            <div className="flex items-center gap-6 md:gap-8">
+
+              {/* SHOP  */}
+              <Link
+                href="/shop"
+                className="relative group p-2 transition-all duration-500"
+              >
+                {/* Soft Halo Background */}
+                <div className="absolute inset-0 bg-white/0 rounded-full group-hover:bg-white/5 transition-all duration-700 scale-50 group-hover:scale-100" />
+
+                <Store
+                  strokeWidth={1.2}
+                  className="relative z-10 w-5 h-5 md:w-6 md:h-6  transition-colors duration-500"
+                />
+
+                {/* Tooltip */}
+                <span className="pointer-events-none absolute left-1/2 top-full mt-3 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#000000] px-3 py-1.5 text-[9px] uppercase tracking-widest text-[#F6F7F4] opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:blur-0 group-hover:translate-y-0.5 hidden md:block">
+                  Shop
+                </span>
+              </Link>
               {/* USER PROFILE */}
               <Link
                 href="/user"
@@ -52,10 +96,12 @@ const Header = () => {
 
                 <CircleUserRound
                   strokeWidth={1.2}
-                  className="relative z-10 w-5 h-5 md:w-6 md:h-6 group-hover:text-[#b38b3f] transition-colors duration-500"
+                  className="relative z-10 w-5 h-5 md:w-6 md:h-6  transition-colors duration-500"
                 />
-
-                
+                {/* Tooltip */}
+                <span className="pointer-events-none absolute left-1/2 top-full mt-3 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#010101] px-3 py-1.5 text-[9px] uppercase tracking-widest text-[#F6F7F4] opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:blur-0 group-hover:translate-y-0.5 hidden md:block">
+                  User
+                </span>
               </Link>
 
               {/* SHOPPING BAG */}
@@ -68,18 +114,17 @@ const Header = () => {
 
                 <ShoppingBag
                   strokeWidth={1.2}
-                  className="relative z-10 w-5 h-5 md:w-6 md:h-6 group-hover:text-[#b38b3f] transition-colors duration-500"
+                  className="relative z-10 w-5 h-5 md:w-6 md:h-6 transition-colors duration-500"
                 />
+                {/* Tooltip */}
+                <span className="pointer-events-none absolute left-2/3 top-full mt-3 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#000000] px-3 py-1.5 text-[9px] uppercase tracking-widest text-white opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:blur-0 group-hover:translate-y-0.5 hidden md:block">
+                  Bag
+                </span>
 
                 {/* Premium Notification Dot */}
                 {cartCount > 0 && (
                   <span className="absolute top-1 right-1 w-1.5 h-1.5 bg-[#b38b3f] rounded-full shadow-[0_0_10px_rgba(179,139,63,0.6)]" />
                 )}
-
-                {/* Badge for Count (Minimalist Version) */}
-                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                  Bag ({cartCount})
-                </span>
               </Link>
             </div>
           </div>
@@ -134,28 +179,28 @@ const Header = () => {
                   </motion.button>
                 </Link>
               ))}
-              <Link href={'/cart'}>
-                  <motion.button
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    // transition={{ delay: i * 0.1 }}
-                    onClick={() => setOpen(false)}
-                    className="text-3xl font-light tracking-widest text-zinc-200 hover:text-white transition"
-                  >
-                    Bag
-                  </motion.button>
-                </Link>
-                <Link href={'/user'}>
-                  <motion.button
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    // transition={{ delay: i * 0.1 }}
-                    onClick={() => setOpen(false)}
-                    className="text-3xl font-light tracking-widest text-zinc-200 hover:text-white transition"
-                  >
-                    User
-                  </motion.button>
-                </Link>
+              <Link href={"/cart"}>
+                <motion.button
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  // transition={{ delay: i * 0.1 }}
+                  onClick={() => setOpen(false)}
+                  className="text-3xl font-light tracking-widest text-zinc-200 hover:text-white transition"
+                >
+                  Bag
+                </motion.button>
+              </Link>
+              <Link href={"/user"}>
+                <motion.button
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  // transition={{ delay: i * 0.1 }}
+                  onClick={() => setOpen(false)}
+                  className="text-3xl font-light tracking-widest text-zinc-200 hover:text-white transition"
+                >
+                  User
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
         )}
