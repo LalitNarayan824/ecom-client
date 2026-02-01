@@ -6,6 +6,7 @@ import Footer from "@/components/Home/Footer";
 import Newsletter from "@/components/Home/NewsLetter";
 import SmoothScroll from "@/components/SmoothScroll"
 import WelcomeOverlay from "@/components/Home/WelcomeOverlay";
+import { Toaster } from "react-hot-toast";
 
 
 const geistSans = Geist({
@@ -51,6 +52,7 @@ export default function RootLayout({
         <Newsletter/>
         <Footer/>
         </div>
+        <Toaster/>
         </SmoothScroll>
       </body>
     </html>

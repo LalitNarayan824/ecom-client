@@ -3,24 +3,25 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Minus, Plus, Trash2, MapPin, ChevronRight, ShieldCheck } from "lucide-react";
 import Link from "next/link";
+import { useCart } from "@/hooks/useCart";
+import { CartItem } from "@/store/useCartStore";
 
 export default function CartPage() {
-  const [items, setItems] = useState([
-    { id: 1, name: "Wild Lily Composition", price: 4200, qty: 1, ref: "00-1431" },
-    { id: 2, name: "Amaryllis Series", price: 8500, qty: 1, ref: "00-1432" },
-    // { id: 3, name: "Wild Lily Composition", price: 4200, qty: 1, ref: "00-1431" },
-    // { id: 4, name: "Amaryllis Series", price: 8500, qty: 1, ref: "00-1432" },
-    // { id: 5, name: "Wild Lily Composition", price: 4200, qty: 1, ref: "00-1431" },
-    // { id: 6, name: "Amaryllis Series", price: 8500, qty: 1, ref: "00-1432" },
-  ]);
 
-  const updateQty = (id:number, delta:number) => {
-    setItems(items.map(item => 
-      item.id === id ? { ...item, qty: Math.max(1, item.qty + delta) } : item
-    ));
-  };
+  const {cart , addItem , removeItem , clearCart} = useCart();
 
-  const subtotal = items.reduce((acc, item) => acc + (item.price * item.qty), 0);
+  const updateQty=(item:CartItem , qty:number)=>{
+
+    const {quantity ,...productOnly} = item
+
+    addItem(item , qty)
+
+
+  }
+
+  
+
+  const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
     <main className="bg-[#780000] min-h-screen pt-24 md:pt-32 pb-20 px-4 md:px-12 text-[#121212] font-sans">
@@ -39,8 +40,9 @@ export default function CartPage() {
           
           {/* --- LEFT: PRODUCT LIST (7 Columns) --- */}
           <section className="lg:col-span-7 space-y-6">
+            {cart.length===0 && <span className="text-3xl  text-white font-serif italic tracking-tighter lowercase">No items in the Bag , go back to Shop</span>}
             <AnimatePresence>
-              {items.map((item) => (
+              {cart.map((item) => (
                 
                 // ONE CART ITEM START
 
@@ -57,20 +59,20 @@ export default function CartPage() {
                     <div className="flex justify-between items-start">
                       <div>
                         <h3 className="text-xl font-serif italic">{item.name}</h3>
-                        <p className="text-[10px] font-mono text-zinc-900 uppercase mt-1">Ref: {item.ref}</p>
+                        <p className="text-sm font-mono text-zinc-900 uppercase mt-1">₹{item.price.toLocaleString()}</p>
                       </div>
-                      <button className="text-zinc-900 hover:text-red-500 transition-colors hover:cursor-pointer">
+                      <button onClick={() => removeItem(item.id)} className="text-zinc-900 hover:text-red-500 transition-colors hover:cursor-pointer">
                         <Trash2 size={16} />
                       </button>
                     </div>
 
                     <div className="flex justify-between items-end">
                       <div className="flex items-center border border-black/10 px-3 py-1 gap-6">
-                        <button onClick={() => updateQty(item.id, -1)} className="hover:text-[#B38B3F]"><Minus size={12} /></button>
-                        <span className="text-sm font-mono w-4 text-center">{item.qty}</span>
-                        <button onClick={() => updateQty(item.id, 1)} className="hover:text-[#B38B3F]"><Plus size={12} /></button>
+                        <button onClick={() => updateQty(item, -1)} className="hover:text-[#B38B3F]"><Minus size={12} /></button>
+                        <span className="text-sm font-mono w-4 text-center">{item.quantity < 10 ? `0${item.quantity}` : item.quantity}</span>
+                        <button onClick={() => updateQty(item, 1)} className="hover:text-[#B38B3F]"><Plus size={12} /></button>
                       </div>
-                      <p className="text-lg font-mono">₹{(item.price * item.qty).toLocaleString()}</p>
+                      <p className="text-lg font-mono">₹{(item.price * item.quantity).toLocaleString()}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -104,6 +106,10 @@ export default function CartPage() {
             {/* 2. Order Summary */}
             <div className="bg-[#003049] p-8 border border-black/5 space-y-4 rounded-md">
               <h2 className="text-sm uppercase tracking-[0.4em] text-zinc-100 font-bold mb-6">Summary</h2>
+              <div className="flex justify-between text-sm font-semibold">
+                <span className="text-zinc-100">Total items</span>
+                <span className="text-zinc-100 font-semibold">{cart.length < 10 ? `0${cart.length}` : cart.length}</span>
+              </div>
               <div className="flex justify-between text-sm font-semibold">
                 <span className="text-zinc-100">Subtotal</span>
                 <span className="text-zinc-100 font-semibold">₹{subtotal.toLocaleString()}</span>

@@ -12,6 +12,7 @@ import {
   User,
 } from "lucide-react";
 import Image from "next/image";
+import { useCart } from "@/hooks/useCart";
 
 const menuItems: { name: string; src: string }[] = [
   { name: "Home", src: "/" },
@@ -23,9 +24,9 @@ const menuItems: { name: string; src: string }[] = [
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  // *todo
-  // *real cart count from context manager
-  const [cartCount, setcartCount] = useState(4);
+  const cart = useCart().cart
+  
+  const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <>
@@ -59,7 +60,7 @@ const Header = () => {
                 {/* Icon */}
                 <House
                   strokeWidth={1.2}
-                  className="relative z-10 h-5 w-5 md:h-6 md:w-6"
+                  className="relative z-10 h-5 w-5 text-[#F6F7F4]  md:h-6 md:w-6"
                 />
 
                 {/* Tooltip */}
@@ -78,7 +79,7 @@ const Header = () => {
 
                 <Store
                   strokeWidth={1.2}
-                  className="relative z-10 w-5 h-5 md:w-6 md:h-6  transition-colors duration-500"
+                  className="relative z-10 w-5 h-5 md:w-6 text-[#F6F7F4] md:h-6  transition-colors duration-500"
                 />
 
                 {/* Tooltip */}
@@ -96,7 +97,7 @@ const Header = () => {
 
                 <CircleUserRound
                   strokeWidth={1.2}
-                  className="relative z-10 w-5 h-5 md:w-6 md:h-6  transition-colors duration-500"
+                  className="relative z-10 w-5 h-5 md:w-6 text-[#F6F7F4] md:h-6  transition-colors duration-500"
                 />
                 {/* Tooltip */}
                 <span className="pointer-events-none absolute left-1/2 top-full mt-3 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#010101] px-3 py-1.5 text-[9px] uppercase tracking-widest text-[#F6F7F4] opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:blur-0 group-hover:translate-y-0.5 hidden md:block">
@@ -114,7 +115,7 @@ const Header = () => {
 
                 <ShoppingBag
                   strokeWidth={1.2}
-                  className="relative z-10 w-5 h-5 md:w-6 md:h-6 transition-colors duration-500"
+                  className="relative z-10 w-5 h-5 md:w-6 text-[#F6F7F4] md:h-6 transition-colors duration-500"
                 />
                 {/* Tooltip */}
                 <span className="pointer-events-none absolute left-2/3 top-full mt-3 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#000000] px-3 py-1.5 text-[9px] uppercase tracking-widest text-white opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:blur-0 group-hover:translate-y-0.5 hidden md:block">
@@ -122,9 +123,10 @@ const Header = () => {
                 </span>
 
                 {/* Premium Notification Dot */}
-                {cartCount > 0 && (
-                  <span className="absolute top-1 right-1 w-1.5 h-1.5 bg-[#b38b3f] rounded-full shadow-[0_0_10px_rgba(179,139,63,0.6)]" />
-                )}
+                {totalItems > 0 && (
+              <span className="absolute top-1 right-1 w-2 h-2 bg-[#ffc800] rounded-full animate-pulse" />
+            )}
+                
               </Link>
             </div>
           </div>
