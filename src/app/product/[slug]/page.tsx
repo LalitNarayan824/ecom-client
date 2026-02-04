@@ -63,7 +63,7 @@ export default function ProductPage() {
         </div>
 
         {/* --- DETAILS: Below on Mobile, Right on Desktop --- */}
-        <div className="lg:col-span-7 order-2 space-y-10 md:space-y-14 bg-[#ffc800] p-4 rounded-2xl">
+        <div className="lg:col-span-7 order-2 space-y-8 md:space-y-6 bg-[#ffc800] p-4 rounded-2xl">
           <header className="space-y-4">
             <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-black font-bold">
               Series / {product.category}
@@ -71,17 +71,17 @@ export default function ProductPage() {
             <h1 className="text-4xl md:text-7xl text-black font-serif tracking-tighter leading-[0.9] italic">
               {product.name}
             </h1>
-            <p className="text-xl font-mono text-black">
+            <p className="text-2xl font-mono text-black">
               ₹{product.price.toLocaleString()}
             </p>
           </header>
 
-          <div className="max-w-md space-y-12">
+          <div className="max-w-md space-y-8">
             <p className="text-[10px] uppercase italic tracking-[0.2em] text-black font-bold">
               {product.description}. A composition focused on structural elegance and botanical longevity.
             </p>
 
-            <div className="space-y-10">
+            <div className="space-y-6">
               <div className="flex items-center gap-6 py-4 border-y border-black/10">
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-black font-bold">Quantity</span>
                 <div className="flex items-center gap-8 bg-black/5 px-4 py-2 rounded-lg border border-black/10">

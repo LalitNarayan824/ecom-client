@@ -39,7 +39,7 @@ const Header = () => {
                         alt="logo-text"
                         width={100}
                         height={30}
-                        style={{ width: "clamp(45vw, 1000px)"}}
+                        style={{ width: "clamp(45vw, 1000px)", height:"auto"}}
                         className="z-11 pointer-events-auto block"
                         priority
                       />
