@@ -60,6 +60,7 @@ const RedGreen = () => {
                     src="/bouqet1.jpg"
                     alt="Red bouquet"
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-red-950/20 mix-blend-multiply" />
@@ -121,6 +122,7 @@ const RedGreen = () => {
                     src="/bouqet2.jpg"
                     alt="Green bouquet"
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-[#0d1310]/40 mix-blend-multiply" />

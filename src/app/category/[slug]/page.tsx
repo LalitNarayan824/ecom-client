@@ -65,6 +65,7 @@ export default function CategoryPage() {
 }
 
 function ProductCard({ product, index }: { product: Product; index: number }) {
+  //c36f09
   return (
     <Link href={`/product/${product.id}`} className="block group bg-[#c36f09]  lg:p-2 rounded-xl">
       <motion.div

@@ -4,6 +4,8 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
+// w-[92%] h-[65vh] md:w-[75%] md:h-[80vh]
+
 export default function SurpriseHero() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -21,25 +23,25 @@ export default function SurpriseHero() {
   return (
     <section
       ref={ref}
-      className="relative h-screen w-full bg-[#004b23] overflow-hidden flex items-center justify-center"
+      className="relative h-screen w-full bg-[#000000] overflow-hidden flex items-center justify-center"
     >
       {/* 1. THE FLOATING GALLERY FRAME */}
       <motion.div
         style={{ scale, opacity }}
-        className="relative w-[92%] h-[65vh] md:w-[75%] md:h-[80vh] overflow-hidden rounded-[1px] z-0 shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+        className="relative w-full h-screen overflow-hidden rounded-[1px] z-0 shadow-[0_0_50px_rgba(0,0,0,0.5)]"
       >
         <motion.div
           style={{ y: imgY }}
-          className="relative w-full h-[120%] -top-[10%]"
+          className="relative w-full h-[120%] -top-[11%]"
         >
           {/* <div className="absolute inset-0 bg-emerald-900/20 mix-blend-multiply" /> */}
-
+          
           <Image
-            src="/pexels1.jpg"
+            src="/temp-hero9.png"
             alt="Botanical Art"
             fill
             priority
-            className="object-cover contrast-[1.1]"
+            className="object-cover9"
           />
         </motion.div>
 
@@ -55,6 +57,7 @@ export default function SurpriseHero() {
           transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
           className="w-full max-w-4xl"
         >
+          <p className=" ml-25 font-serif text-2xl">Florea makes it</p>
           {/* Headline: Fluid scaling with clamp to prevent extreme sizes */}
           <Image
             src={"/hero-text5.png"}
