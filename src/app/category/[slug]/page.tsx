@@ -38,12 +38,13 @@ export default function CategoryPage() {
       </header>
 
       {/* --- PRODUCT GRID --- */}
+      {/* a63c06 */}
       <div className="bg-[#a63c06] rounded-2xl p-3 lg:p-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-10 gap-y-20">
-        <AnimatePresence>
+        
           {visibleProducts.map((product, i) => (
-            <ProductCard key={product.id} product={product} index={i} />
+            <ProductCard key={product.id} product={product} />
           ))}
-        </AnimatePresence>
+        
       </div>
 
       {/* --- PAGINATION --- */}
@@ -59,46 +60,50 @@ export default function CategoryPage() {
         </div>
       )}
 
-      <FilterDrawer isOpen={isFilterOpen} onClose={() => setIsFilterOpen(false)} />
+      {/* <FilterDrawer isOpen={isFilterOpen} onClose={() => setIsFilterOpen(false)} /> */}
     </main>
   );
 }
 
-function ProductCard({ product, index }: { product: Product; index: number }) {
-  //c36f09
+//c36f09
+
+
+
+
+
+
+function ProductCard({ product }: { product: Product }) {
   return (
-    <Link href={`/product/${product.id}`} className="block group bg-[#c36f09]  lg:p-2 rounded-xl">
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: (index % 4) * 0.05 }}
-      >
-        {/* 1. THE IMAGE: No border, just clean edges */}
-        <div className="relative aspect-4/5 overflow-hidden bg-[#c36f09] rounded-2xl mb-4">
+    <Link href={`/product/${product.id}`} className="group block">
+      <div className="relative overflow-hidden rounded-2xl bg-[#c36f09] p-3 backdrop-blur-lg ">
+        
+        {/* IMAGE: Fixed aspect ratio, simple zoom on hover */}
+        <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-zinc-900">
           <img
             src={product.image}
-            className="w-full h-full object-cover rounded-2xl transition-transform duration-700 ease-out group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-500 "
             alt={product.name}
           />
         </div>
 
-        {/* 2. THE INFO: Simple stacked typography */}
-        <div className="space-y-1 m-2 lg:m-0 ">
-          <div className="flex justify-between items-baseline">
-            <h3 className="text-sm  md:text-xl font-medium text-zinc-100  transition-colors">
-              {product.name}
-            </h3>
-            <span className="text-sm font-mono text-zinc-100">
+        {/* CONTENT: High-contrast minimalist stack */}
+        <div className="mt-4 px-1">
+          <div className="flex items-start justify-between gap-2">
+            <div className="space-y-0.5">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-100">
+                {product.category}
+              </p>
+              <h3 className="text-base font-medium text-zinc-100">
+                {product.name}
+              </h3>
+            </div>
+            
+            <p className="text-sm font-semibold text-zinc-100">
               ₹{product.price.toLocaleString()}
-            </span>
+            </p>
           </div>
-          
-          <p className="text-[10px] uppercase tracking-widest">
-            {product.category}
-          </p>
         </div>
-      </motion.div>
+      </div>
     </Link>
   );
 }

@@ -37,11 +37,11 @@ export default function SurpriseHero() {
           {/* <div className="absolute inset-0 bg-emerald-900/20 mix-blend-multiply" /> */}
           
           <Image
-            src="/temp-hero9.png"
+            src="/temp-hero7.png"
             alt="Botanical Art"
             fill
             priority
-            className="object-cover9"
+            className="object-cover"
           />
         </motion.div>
 

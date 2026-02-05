@@ -73,7 +73,7 @@ const RedGreen = () => {
       </div>
 
       {/* ================= SECTION 2: EVERGREEN MINIMAL ================= */}
-      <div className="relative w-full bg-[#0d1310] py-24 lg:py-40 border-t border-white/5">
+      <div className="relative w-full bg-[#004e0d] py-24 lg:py-40 border-t border-white/5">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col gap-20 lg:flex-row lg:items-end">
             
