@@ -1,5 +1,5 @@
 
-import FractalBloomHero from "@/components/FractalTree";
+
 import Hero from "@/components/Home/Hero";
 import NewArrivals from "@/components/Home/NewArrivals";
 import RedGreen from "@/components/Home/RedGreen";
