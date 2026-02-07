@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Flora — Natural Flowers & Elegant Bouquets",
+    default: "Florea — Natural Flowers & Elegant Bouquets",
     template: "%s | Flora",
   },
   description:

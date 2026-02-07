@@ -13,9 +13,7 @@ export default function Home() {
     <Hero/>
 
 
-    {/* experimental */}
-    {/* <FractalBloomHero/> */}
-    {/* <CelestialBloomShader/> */}
+   
 
     {/* <NewArrivals/> */}
     {/* <ShopByCategory/> */}
