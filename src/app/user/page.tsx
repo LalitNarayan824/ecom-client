@@ -22,7 +22,7 @@ export default function UserDashboard() {
   const [isEditNodeModalOpen, setIsEditNodeModalOpen] = useState(false);
 
   return (
-    <main className="bg-[#d5d501] min-h-screen pt-24 md:pt-32 pb-20 px-4 md:px-12 text-[#1A1A1A] font-sans selection:bg-[#B38B3F]/10">
+    <main className="bg-[#8ed000cb] min-h-screen pt-24 md:pt-32 pb-20 px-4 md:px-12 text-[#1A1A1A] font-sans selection:bg-[#B38B3F]/10">
       <div className="max-w-6xl mx-auto space-y-16 bg-[#ecec25] p-7 rounded-2xl">
         {/* --- TOP NAV / LOGOUT --- */}
         <div className="flex justify-end items-center border-b border-black/5 pb-6">

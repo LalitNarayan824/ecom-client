@@ -55,7 +55,7 @@ export default function App() {
   if (!mounted) return null;
 
   return (
-    <div className=" min-h-screen">
+    <div className=" min-h-screen ">
       <header className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 ml-10 mt-25 mb-6 lg:mb-12 border-b border-white/5 pb-8">
         <div className="space-y-2">
           <h2 className="text-3xl md:text-5xl font-serif italic text-zinc-100 tracking-tight">
@@ -83,9 +83,9 @@ export default function App() {
           </p>
         }
       >
-        <div className="px-4 md:px-10">
+        <div className="px-4 md:px-20 lg:px-30">
           <ResponsiveMasonry
-            columnsCountBreakPoints={{ 300: 2, 500: 3, 700: 4, 900: 5 }}
+            columnsCountBreakPoints={{ 500: 2, 700: 3, 900: 4, 1200: 4 }}
           >
             <Masonry gutter="20px">
               {images.map((image) => (

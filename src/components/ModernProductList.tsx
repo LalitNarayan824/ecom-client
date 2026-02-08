@@ -14,7 +14,7 @@ interface Product {
 
 export default function SimpleProductList({ products }: { products: Product[] }) {
   return (
-    <div className="bg-[#0c0c0c] mt-5 px-4 md:px-10 py-12 md:py-16">
+    <div className="bg-[#001043] mt-5 px-4 md:px-10 py-12 md:py-16">
       {/* --- HEADER SECTION --- */}
       <header className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mb-12 border-b border-white/5 pb-8">
         <div className="space-y-2">
