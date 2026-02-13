@@ -37,7 +37,7 @@ export default function SurpriseHero() {
           {/* <div className="absolute inset-0 bg-emerald-900/20 mix-blend-multiply" /> */}
           
           <Image
-            src="/temp-hero7.png"
+            src="/pexels1.jpg"
             alt="Botanical Art"
             fill
             priority

@@ -22,7 +22,7 @@ export default function BotanicalIndex() {
     >
       <div className="flex flex-col border-t border-zinc-800">
         {categories.slice(0, 15).map((category, i) => (
-          <Link key={category.name} href={`/category/${category.name.toLowerCase()}`}>
+          <Link key={category.name} href={`/product?category=${category.name.toLowerCase()}`}>
           <div
           
           onMouseEnter={() => setHoveredIndex(i)}
